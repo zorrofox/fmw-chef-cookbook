@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: fmw_inst
-# Recipe:: webcenter
+# Recipe:: wcsites
 #
 # Copyright 2015 Oracle. All Rights Reserved
 # log  "####{cookbook_name}::#{recipe_name} #{Time.now.inspect}: Starting execution phase"
@@ -63,15 +63,15 @@ template node['fmw']['tmp_dir'] + '/wc_' + fmw_template do
             option_array: option_array)
 end
 
-fmw_inst_fmw_extract 'webcenter' do
+fmw_inst_fmw_extract 'wcsites' do
   action              :extract
   source_file         node['fmw_inst']['wcsites_source_file']
   source_2_file       node['fmw_inst']['wcsites_source_2_file']   if node['fmw_inst'].attribute?('wcsites_source_2_file')
-  os_user             node['fmw']['os_user']                        if unix
-  os_group            node['fmw']['os_group']                       if unix
+  os_user             node['fmw']['os_user']                      if unix
+  os_group            node['fmw']['os_group']                     if unix
   tmp_dir             node['fmw']['tmp_dir']
-  version             node['fmw']['version']                        unless unix
-  middleware_home_dir node['fmw']['middleware_home_dir']            unless unix
+  version             node['fmw']['version']                      unless unix
+  middleware_home_dir node['fmw']['middleware_home_dir']          unless unix
 end
 
 if platform_family?('rhel')

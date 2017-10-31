@@ -18,6 +18,8 @@ recipe            "fmw_inst::soa_suite",
                   "This will install the SOA Suite on a Middleware home"
 recipe            "fmw_inst::webcenter",
                   "This will install the Webcenter on a Middleware home"
+recipe            "fmw_inst::wcsites",
+                  "This will install the Webcenter Sites on a Middleware home"
 recipe            "fmw_inst::oim",
                   "This will install the Oracle Identity/Accesss Manager on a Middleware home"
 
