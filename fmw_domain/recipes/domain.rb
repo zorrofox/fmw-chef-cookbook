@@ -12,7 +12,7 @@ fail 'databag_key parameter cannot be empty' unless node['fmw_domain'].attribute
 include_recipe 'fmw_wls::install'
 
 domain_params =  begin
-                data_bag_item('fmw_domains',node['fmw_domain']['databag_key'])
+                data_bag_item('opc',node['fmw_domain']['databag_key'])
               rescue Net::HTTPServerException, Chef::Exceptions::ValidationFailed, Chef::Exceptions::InvalidDataBagPath
                 [] # empty array for length comparison
               end
