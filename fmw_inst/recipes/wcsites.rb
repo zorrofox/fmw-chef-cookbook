@@ -25,11 +25,11 @@ if ['12.2.1', '12.2.1.1', '12.2.1.2'].include?(node['fmw']['version'])
   install_type = 'WebCenter Sites'
 
   if node['fmw']['version'] == '12.2.1'
-    fmw_installer_file = node['fmw']['tmp_dir'] + '/webcenter/fmw_12.2.1.0.0_wcsites_generic.jar'
+    fmw_installer_file = node['fmw']['tmp_dir'] + '/wcsites/fmw_12.2.1.0.0_wcsites_generic.jar'
   elsif node['fmw']['version'] == '12.2.1.1'
-    fmw_installer_file = node['fmw']['tmp_dir'] + '/webcenter/fmw_12.2.1.1.0_wcsites.jar'
+    fmw_installer_file = node['fmw']['tmp_dir'] + '/wcsites/fmw_12.2.1.1.0_wcsites.jar'
   elsif node['fmw']['version'] == '12.2.1.2'
-    fmw_installer_file = node['fmw']['tmp_dir'] + '/webcenter/fmw_12.2.1.2.0_wcsites.jar'
+    fmw_installer_file = node['fmw']['tmp_dir'] + '/wcsites/fmw_12.2.1.2.0_wcsites.jar'
   end
 
 elsif ['10.3.6'].include?(node['fmw']['version'])
@@ -40,9 +40,9 @@ elsif ['10.3.6'].include?(node['fmw']['version'])
                   "APPSERVER_LOCATION=#{node['fmw']['middleware_home_dir']}"]
 
   if node['os'].include?('windows')
-    fmw_installer_file = node['fmw']['tmp_dir'] + '/webcenter/Disk1/setup.exe'
+    fmw_installer_file = node['fmw']['tmp_dir'] + '/wcsites/Disk1/setup.exe'
   else
-    fmw_installer_file = node['fmw']['tmp_dir'] + '/webcenter/Disk1/runInstaller'
+    fmw_installer_file = node['fmw']['tmp_dir'] + '/wcsites/Disk1/runInstaller'
   end
 end
 
